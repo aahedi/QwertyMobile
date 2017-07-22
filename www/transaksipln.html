@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pulsa</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+    <link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css"><script src="cordova.js"></script><script src="js/jquery-1.9.min.js"></script>
+<script>
+function GetValues()
+{
+var URL = String(window.location.href + "&x=x?x=x");
+var args = String(URL.split("?")[1]); /* all of the arguments */
+var pairs = args.split("&");  /* the name=value pairs */
+var i;
+var pair;
+var name;
+var value;
+var f = document.getElementById('kd');
+	for (i = 0; i < pairs.length; i++)
+	{
+		pair = pairs[i].split("=");
+		name = pair[0];
+		value = pair[1];
+		if (name == "isi")
+		{
+			document.getElementById('kd').value = value;
+		}
+	}
+}
+</script>
+  </head>
+  <body onload="GetValues();onLoad();">
+<div class="atas"><span id="kiri"><h1>Qwerty Mobile</h1></span><span id="kanan"><h2 onclick="buka('daftar.html');">DAFTAR DISINI</h2></span></div>
+<div class="judul"><span onclick="buka('index.html');">Menu Utama</span> | Transaksi</div>
+<div class="container">
+<form name="f1" style="margin:80px 20px 0px 20px;">
+<div class="form-group"><select id="sc">
+    <!--<option value="082240403020">082240403020</option>-->
+    <option value="081343066699">081343066699</option><option value="082399445594">082399445594</option><option value="082399445541">082399445541</option><option value="085696048604">085696048604</option><option value="08566509450">08566509450</option>
+      </select>
+      <label for="select" class="control-label" id="sc" onChange="jmla()">Center</label><i class="bar"></i>
+    </div>
+    <div class="form-group" hidden>
+      <input type="text" required id="kd" name="isi"/>
+      <label for="input" class="control-label">Kode</label><i class="bar"></i>
+    </div>
+    <div class="form-group">
+      <input type="number" required id="idpel" oninput="jmla()" onkeyup="jmla()" onkeydown="this.value=removeSpaces(this.value)" onkeypress="return isNumberKey(event)" maxlength="12"/>
+      <label for="input" class="control-label">Masukkan ID Pelanggan</label><i class="bar"></i>
+    </div>
+    <div class="form-group">
+      <input type="number" required id="pin" oninput="jmla()" onkeyup="jmla()" onkeydown="this.value=removeSpaces(this.value)" onkeypress="return isNumberKey(event)" maxlength="12"/>
+      <label for="input" class="control-label">Masukkan PIN</label><i class="bar"></i>
+    </div>
+    <div class="form-group">
+      <input type="tel" required id="no_hp" onkeyup="jmla()" onkeydown="this.value=removeSpaces(this.value)" onkeypress="return isNumberKey(event)" maxlength="17"/>
+      <label for="input" class="control-label">Masukkan No HP Pelanggan</label><i class="bar"></i>
+	  <button onclick="kontak();">Cari kontak</button>
+    </div>
+    <div class="form-group" hidden>
+      <input type="text" required id="pesan"/>
+      <label for="input" class="control-label">Pesan</label><i class="bar"></i>
+    </div>
+	
+  <div class="button-container">
+    <button type="button" class="button" onclick="sendSMS(document.getElementById('sc').value,document.getElementById('pesan').value);"><span>SMS</span></button>
+	
+    <button type="button" class="button" onclick="alert('Silahkan pilih contact: qwertyreload_bot, Jika belum ada tambahkan dulu @qwertyreload_bot di contact telegram Anda');window.plugins.socialsharing.shareVia('org.telegram.messenger', document.getElementById('pesan').value, null, null, null, function(){console.log('share ok')}, function(msg) {alert('error: ' + msg)})"><span>Telegram</span></button>
+  </div>
+  </form>
+  <div class="panduan">*Sebelum bertransaksi harap pastikan SIM1 memiliki pulsa yang mencukupi<br><br><br>
+  SOLUSI MASALAH<br><br>
+  *Harap pastikan Anda sudah memberikan izin SMS<br>
+  Ikuti langkah berikut:<br><br>
+  1. Buka Setelan-> Aplikasi-><br><br><img src="panduan1.png"/><br><br>
+  2. Izinkan semua<br><br><img src="panduan2.png"/>
+  </div>
+</div>
+        <script src="js/indexpln.js"></script>
+		<script>
+function kontak(){
+
+navigator.contacts.pickContact(function(contact){
+        console.log('The following contact has been selected:' + JSON.stringify(contact));
+		
+		var data = JSON.stringify(contact.phoneNumbers[0].value);
+		document.getElementById('no_hp').value=data.replace(/[^\d.+]/g, '');
+		document.getElementById("no_hp").focus();jmla();
+		
+    },function(err){
+        console.log('Error: ' + err);
+    });
+}
+		</script>
+  </body>
+</html>

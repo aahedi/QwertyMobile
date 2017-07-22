@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pulsa</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+    <link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css"><script src="cordova.js"></script><script src="js/jquery-1.9.min.js"></script>
+  </head>
+  <body onload="GetValues();onLoad();">
+<div class="atas"><span id="kiri"><h1>Qwerty Mobile</h1></span><span id="kanan"><h2 onclick="javascript:window.open('http://www.pulsa-online-indonesia.com/pendaftaran/', '_blank', 'location=no,toolbar=no','closebuttoncaption=Return');">DAFTAR DISINI</h2></span></div>
+<div class="judul"><span onclick="buka('index.html');">Menu Utama</span> | Pendaftaran</div>
+<div class="container">
+<form method="post" action="http://member.pulsa-online-indonesia.com/index.php?cm=web&amp;cp=newmember" style="margin:80px 20px 0px 20px;">
+    <div class="form-group">
+      <input type="text" required name="nama" onkeyup="jmla()" maxlength="15"/>
+      <label for="input" class="control-label">Masukkan Nama*</label><i class="bar"></i>
+    </div>
+    <div class="form-group">
+      <input type="text" required name="alamat" onkeyup="jmla()" maxlength="25"/>
+      <label for="input" class="control-label">Masukkan Alamat*</label><i class="bar"></i>
+    </div>
+    <div class="form-group">
+      <input type="text" required name="email" onkeyup="jmla()" maxlength="20"/>
+      <label for="input" class="control-label">Masukkan Email*</label><i class="bar"></i>
+    </div>
+    <div class="form-group">
+      <input type="number" required name="notel" onkeyup="jmla()" onkeydown="this.value=removeSpaces(this.value)" onkeypress="return isNumberKey(event)" maxlength="12"/>
+      <label for="input" class="control-label">Masukkan No HP*</label><i class="bar"></i>
+    <font color="grey">*No HP yang digunakan untuk transaksi.<br>*PIN akan kami kirimkan ke NoHP ini</font>
+	</div>
+    <div class="form-group">
+      <input type="text" required name="ymid" onkeyup="jmla()" maxlength="20"/>
+      <label for="input" class="control-label">Masukkan YahooID</label><i class="bar"></i>
+    <font color="grey">*ID Yahoo boleh kosong</font>
+    </div>
+  <div class="button-container" style="margin-top:-30px;">
+    <button type="Submit" class="button"><span>Lakukan Pendaftaran</span></button>
+  </div>
+        <script src="js/index3.js"></script>
+  </form>
+  </body>
+</html>

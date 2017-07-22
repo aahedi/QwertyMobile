@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pulsa</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+    <link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css"><script src="cordova.js"></script><script src="js/jquery-1.9.min.js"></script>
+  </head>
+  <body>
+<div class="atas"><span id="kiri"><h1>Qwerty Mobile</h1></span><span id="kanan"><h2 onclick="buka('daftar.html');">DAFTAR DISINI</h2></span></div>
+<div class="judul"><span onclick="buka('index.html');">Menu Utama</span> | Cek Harga</div>
+<div class="container">
+<form name="f1" style="margin:80px 20px 0px 20px;">
+<div class="form-group"><select id="sc">
+    <!--<option value="082240403020">082240403020</option>-->
+    <option value="081343066699">081343066699</option><option value="082399445594">082399445594</option><option value="082399445541">082399445541</option><option value="085696048604">085696048604</option><option value="08566509450">08566509450</option>
+      </select>
+      <label for="select" class="control-label" id="sc" onChange="jmla()">Center</label><i class="bar"></i>
+    </div>
+<div class="form-group"><select id="kode" onChange="jmla()">
+    <option value="">--Pilih--</option>
+    <option value="ch.s">Telkomsel</option>
+    <option value="ch.td">Telkomsel Data</option>
+    <option value="ch.i">Indosat</option>
+    <option value="ch.xl">XL</option>
+    <option value="ch.sf">Smartfren</option>
+    <option value="ch.a">Axis</option>
+    <option value="ch.t">Three</option>
+    <option value="ch.p">PLN</option>
+      </select>
+      <label for="select" class="control-label" id="kode">Center</label><i class="bar"></i>
+    </div>
+    <div class="form-group" hidden>
+      <input type="text" required id="pesan" value=""/>
+      <label for="input" class="control-label">Pesan</label><i class="bar"></i>
+    </div>
+	
+  <div class="button-container">
+    <button type="button" class="button" onclick="sendSMS(document.getElementById('sc').value,document.getElementById('pesan').value);"><span>SMS</span></button>
+	
+    <button type="button" class="button" onclick="alert('Silahkan pilih contact: qwertyreload_bot, Jika belum ada tambahkan dulu @qwertyreload_bot di contact telegram Anda');window.plugins.socialsharing.shareVia('org.telegram.messenger', document.getElementById('pesan').value, null, null, null, function(){console.log('share ok')}, function(msg) {alert('error: ' + msg)})"><span>Telegram</span></button>
+  </div>
+  </form>
+  <div class="panduan">*Sebelum bertransaksi harap pastikan SIM1 memiliki pulsa yang mencukupi<br><br><br>
+  SOLUSI MASALAH<br><br>
+  *Harap pastikan Anda sudah memberikan izin SMS<br>
+  Ikuti langkah berikut:<br><br>
+  1. Buka Setelan-> Aplikasi-><br><br><img src="panduan1.png"/><br><br>
+  2. Izinkan semua<br><br><img src="panduan2.png"/>
+  </div>
+</div>
+        <script src="js/index5.js"></script>
+  </body>
+</html>
